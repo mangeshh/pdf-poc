@@ -1,27 +1,18 @@
 package com;
 
-import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 import com.itextpdf.tool.xml.ElementList;
 import com.itextpdf.tool.xml.XMLWorkerHelper;
-import org.apache.commons.lang3.StringEscapeUtils;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class HtmlToPDFConverter {
-
-    public static void mainTest(String[] args) throws FileNotFoundException, IOException {
-        String HTML = new String(Files.readAllBytes(Paths.get("C://Users//mange//Downloads//report_html.html")), StandardCharsets.UTF_8);
-        HtmlConverter.convertToPdf(HTML, new FileOutputStream("C://Users//mange//Downloads//string-to-pdf.pdf"));
-        System.out.println("PDF Created!");
-    }
 
     public static void main(String[] args) throws Exception {
 
