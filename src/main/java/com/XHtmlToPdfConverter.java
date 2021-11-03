@@ -34,8 +34,8 @@ public class XHtmlToPdfConverter {
      * @return
      * @throws IOException
      */
-    final private byte[] convertHtmlToPdf(final String htmlCode) throws IOException {
-        return xhtmlToPdf(xHtmlFromString(HTML_CODE));
+    final private byte[] convertHtmlToPdf(final String htmlCode) {
+        return xhtmlToPdf(xHtmlFromString(htmlCode));
     }
 
     /**
@@ -76,7 +76,7 @@ public class XHtmlToPdfConverter {
      * @return
      * @throws IOException
      */
-    final private byte[] xhtmlToPdf(final org.w3c.dom.Document doc) throws IOException {
+    final private byte[] xhtmlToPdf(final org.w3c.dom.Document doc) {
         final ByteArrayOutputStream pdfStream = new ByteArrayOutputStream();
         try {
             final PdfRendererBuilder builder = new PdfRendererBuilder();
@@ -89,7 +89,12 @@ public class XHtmlToPdfConverter {
             // TODO add logger with the error and create Exception classes, depending on business cases.
             throw new RuntimeException("we can not proceed the request because of ", e);
         } finally {
-            pdfStream.close();
+            try {
+                pdfStream.close();
+            } catch (IOException e) {
+                // TODO add logger with the error and create Exception classes, depending on business cases.
+                throw new RuntimeException("we can not proceed the request because of ", e);
+            }
             // TODO Logger to indicate SUCCESS, with some ID or Reference.
         }
     }
