@@ -54,7 +54,7 @@ public class XHtmlToPdfConverter {
             out.write(pdfBytes);
             out.close();
         } catch (IOException e) {
-            System.out.println("Error, converting HTML to PDF " + e.getMessage()); // TODO Logger
+            System.out.println("Error, converting HTML to PDF " + e.getMessage());
         }
     }
 
