@@ -14,14 +14,12 @@ import java.io.OutputStream;
 public class XHtmlToPdfConverter {
 
     // TODO define all constants inside the another class.
-    // START
     final static String UTF_8 = "UTF-8";
     final static float PAGE_WIDTH = 240f;
     final static float PAGE_HEIGHT = 290f;
     final static BaseRendererBuilder.PageSizeUnits PAGE_SIZE_UNIT = BaseRendererBuilder.PageSizeUnits.MM;
-    // END
 
-    final static String HTML_CODE = "<h1>HTML to PDF Java Example</h1>";
+    static String HTML_CODE = "<h1>HTML to PDF Java Example</h1>";
 
     public XHtmlToPdfConverter() {
         super();
